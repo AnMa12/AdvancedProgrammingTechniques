@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1508951320 source:e:\1. trebusca\~facultate\tehnici avansate de programare\laborator\exersare random\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<fstream>
+

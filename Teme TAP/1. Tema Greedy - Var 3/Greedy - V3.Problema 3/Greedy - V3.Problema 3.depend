@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1509579677 source:e:\1. trebusca\~facultate\tehnici avansate de programare\laborator\tema greedy - var 3\greedy - v3.problema 3\main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+

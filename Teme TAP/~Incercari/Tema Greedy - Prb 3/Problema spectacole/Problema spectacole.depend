@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1509387313 source:e:\1. trebusca\~facultate\tehnici avansate de programare\laborator\problema spectacole\main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+
+1509389555 source:e:\1. trebusca\~facultate\tehnici avansate de programare\laborator\tema greedy - prb 3\problema spectacole\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<bits/stdc++.h>
+

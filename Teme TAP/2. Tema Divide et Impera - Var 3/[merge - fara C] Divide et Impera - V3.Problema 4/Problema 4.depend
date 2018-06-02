@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1511718572 source:e:\1. trebusca\~facultate\tehnici avansate de programare\lab divide et impera\problema 2\problema 4\main.cpp
+	<stdio.h>
+	<float.h>
+	<stdlib.h>
+	<math.h>
+	<fstream>
+	<iostream>
+
