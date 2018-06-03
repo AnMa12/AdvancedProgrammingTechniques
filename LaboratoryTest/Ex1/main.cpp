@@ -15,6 +15,22 @@ int decodare(int litera) {
         return 1;
 }
 
+
+/* observatie:
+   conditia de oprire nu este marime == 2
+   pentru ca sunt urmatoarele cazuri:
+   8 ibwbw unde marimea nu ajunge la 2, oprindu-ne cand marimea ajunge la 4
+   sau in cazul 8 b, unde ne oprim cand marimea e chiar la 8
+   -----
+   cheia sta in numarul de i-uri
+   oprirea o gasim in fuctie de cate i-uri sunt la inceptului programului
+   -----
+   2  = 2^1 oprirea se poate face cand suntem la marimea de 2
+   4  = 2^2
+   8  = 2^3
+   16 = 2^4
+*/
+
 int matrice(int x, int y, int marime) {
 
     if(marime == 2) {
@@ -47,6 +63,8 @@ int matrice(int x, int y, int marime) {
         }
     }
     else if(v[i] == 'i') {
+
+
 
         cout<<endl<<endl;
         cout<<v[i]<<"...";
