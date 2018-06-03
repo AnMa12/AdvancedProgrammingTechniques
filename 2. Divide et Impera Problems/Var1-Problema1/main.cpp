@@ -15,10 +15,8 @@ int indiceValoare(int s, int n)
         else
             return indiceValoare(s,mij-1);
     }
-
     return -1;
 }
-
 
 int main()
 {
