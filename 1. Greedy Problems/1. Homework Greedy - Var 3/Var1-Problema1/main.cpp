@@ -7,17 +7,14 @@ int n, v[100];
 int indiceValoare(int s, int n)
 {
     if (n >= s) {
-         int mij = (s + n) / 2;
-        cout<< " " << mij << " ";
-        cout<<v[mij]<<endl;
+        int mij = (s + n) / 2;
         if(v[mij] == mij)
         return mij;
         else if(v[mij] < mij)
-            return indiceValoare(s,mij-1);
-        else
             return indiceValoare(mij+1,n);
+        else
+            return indiceValoare(s,mij-1);
     }
-
 
     return -1;
 }
