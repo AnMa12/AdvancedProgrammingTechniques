@@ -46,7 +46,7 @@ int matrice(int x, int y, int marime) {
            i += 1;
         }
     }
-    if(v[i] == 'i') {
+    else if(v[i] == 'i') {
         i++;
         cout<<endl<<endl;
         cout<<v[i]<<"...";
