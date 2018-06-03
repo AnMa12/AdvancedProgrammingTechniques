@@ -47,9 +47,12 @@ int matrice(int x, int y, int marime) {
         }
     }
     else if(v[i] == 'i') {
-        i++;
+
         cout<<endl<<endl;
         cout<<v[i]<<"...";
+
+        i++;
+
         marime = marime/2;
         matrice(x, y+marime, marime);
         matrice(x, y, marime);
@@ -61,11 +64,12 @@ int matrice(int x, int y, int marime) {
 int main() {
 
     cin >> n;
-    for(int i = 0; i < 13; i++)
+    for(int i = 0; i < 30; i++)
         cin >> v[i];
 
     matrice(0, 0, n);
 
+    cout<<endl;
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++)
             cout << matrix[i][j] << " ";
