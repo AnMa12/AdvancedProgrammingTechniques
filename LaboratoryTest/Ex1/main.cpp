@@ -1,4 +1,5 @@
 #include<iostream>
+#include <cmath>
 #include<fstream>
 
 using namespace std;
@@ -15,25 +16,20 @@ int decodare(int litera) {
         return 1;
 }
 
-
-/* observatie:
-   conditia de oprire nu este marime == 2
-   pentru ca sunt urmatoarele cazuri:
-   8 ibwbw unde marimea nu ajunge la 2, oprindu-ne cand marimea ajunge la 4
-   sau in cazul 8 b, unde ne oprim cand marimea e chiar la 8
-   -----
-   cheia sta in numarul de i-uri
-   oprirea o gasim in fuctie de cate i-uri sunt la inceptului programului
-   -----
-   2  = 2^1 oprirea se poate face cand suntem la marimea de 2
-   4  = 2^2
-   8  = 2^3
-   16 = 2^4
-*/
-
 int matrice(int x, int y, int marime) {
 
-    if(marime == 2) {
+    if(v[i] == 'i') {
+        cout<<endl<<endl;
+        cout<<v[i]<<"...";
+        i++;
+
+        marime = marime/2;
+        matrice(x, y+marime, marime);
+        matrice(x, y, marime);
+        matrice(x+marime, y, marime);
+        matrice(x+marime, y+marime, marime);
+    }
+    else {
         if(v[i] == 'i') {
                 cout<<endl; cout<<"1";
            matrix[x][y] = decodare(v[i+1]);
@@ -44,38 +40,23 @@ int matrice(int x, int y, int marime) {
                 cout<<v[j]<< "-";
            i += 5;
         } else if(v[i] == 'w') {
-            cout<<endl;
-            cout<<"2";
-           matrix[x][y] = 0;
-           matrix[x][y+1] = 0;
-           matrix[x+1][y] = 0;
-           matrix[x+1][y+1] = 0;
+            cout<<endl;cout<<"2";
+
+           for(int j = x; j < x + marime; j++)
+            for(int q = y; q < y + marime; q++)
+                matrix[j][q] = 0;
+
            cout<<v[i]<<"*";
            i += 1;
         } else if(v[i] == 'b') {
             cout<<endl; cout<<"3";
-           matrix[x][y] = 1;
-           matrix[x][y+1] = 1;
-           matrix[x+1][y] = 1;
-           matrix[x+1][y+1] = 1;
+
+           for(int j = x; j < x + marime; j++)
+            for(int q = y; q < y + marime; q++)
+                matrix[j][q] = 1;
            cout<<v[i]<<"~";
            i += 1;
         }
-    }
-    else if(v[i] == 'i') {
-
-
-
-        cout<<endl<<endl;
-        cout<<v[i]<<"...";
-
-        i++;
-
-        marime = marime/2;
-        matrice(x, y+marime, marime);
-        matrice(x, y, marime);
-        matrice(x+marime, y, marime);
-        matrice(x+marime, y+marime, marime);
     }
 }
 

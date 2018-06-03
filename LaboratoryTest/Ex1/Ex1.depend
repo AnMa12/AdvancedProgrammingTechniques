@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1527992351 source:e:\github\advancedprogrammingtechniques\laboratorytest\ex1\main.cpp
+1527993436 source:e:\github\advancedprogrammingtechniques\laboratorytest\ex1\main.cpp
 	<iostream>
+	<cmath>
 	<fstream>
 
