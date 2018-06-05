@@ -6,34 +6,33 @@ int v[100], n;
 
 void quickSort(int left, int right)
 {
-    if(left < right)
+    int pivot = v[(left + right)/2];
+    int i = left;
+    int j = right;
+
+    while (i <= j)
     {
-        int pivot = v[(left + right)/2];
-        int i = left;
-        int j = right;
+        while(v[i] < pivot)
+            i++;
+        while(v[j] > pivot)
+            j--;
 
-        while (i <= j)
-        {
-            while(v[i] < pivot)
-                i++;
-            while(v[j] > pivot)
-                j--;
+        if (i <= j) {
+        int aux = v[i];
+        v[i] = v[j];
+        v[j] = aux;
+        i++; j--;}
 
-            int aux = v[i];
-            v[i] = v[j];
-            v[j] = aux;
-        }
-
-
-        if(left < j)
-            quickSort(left,i-1);
-        if(i < right)
-            quickSort(i+1,right);
     }
-    return;
+
+
+    if(left < j)
+        quickSort(left,j);
+    if(i < right)
+        quickSort(i,right);
+
+
 }
-
-
 
 int main()
 {
