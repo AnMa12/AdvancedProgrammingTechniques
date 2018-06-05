@@ -12,7 +12,7 @@ void mergeSort(int v[], int left, int right) {
         int i1,i2,i;
         int aux[10];
         for( i1 = left, i2 = mij+1, i = left;
-             i1 <= mij, i2 <= right;
+             i1 <= mij && i2 <= right;
              i++) {
             if(v[i1] <= v[i2])
                 aux[i] = v[i1++];
