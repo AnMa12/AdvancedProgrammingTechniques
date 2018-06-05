@@ -22,14 +22,13 @@ void quickSort(int left, int right)
         v[i] = v[j];
         v[j] = aux;
         i++; j--;}
-
     }
 
 
     if(left < j)
-        quickSort(left,j);
+        quickSort(left,i-1);
     if(i < right)
-        quickSort(i,right);
+        quickSort(i+1,right);
 
 
 }
