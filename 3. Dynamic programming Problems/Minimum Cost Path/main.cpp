@@ -30,6 +30,8 @@ int minim(int a, int b)
 2 5 4
 3 2 1
 4 5 10
+Min cost: 18
+The path: 2 3 2 1 10
 
 3 4
 1 3 5 8
@@ -37,7 +39,6 @@ int minim(int a, int b)
 4 3 2 3
 Min cost: 12
 The path: 1 3 2 1 2 3
-
 */
 
 int main()
