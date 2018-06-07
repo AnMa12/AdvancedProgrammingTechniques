@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1528368512 source:e:\github\advancedprogrammingtechniques\3. dynamic programming problems\minimum cost path\main.cpp
+	<iostream>
+	<fstream>
+
