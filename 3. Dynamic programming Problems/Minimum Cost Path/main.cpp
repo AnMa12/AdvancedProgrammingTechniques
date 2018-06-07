@@ -31,7 +31,7 @@ int main()
     for(int i = 0; i < n; i++)
         for(int j = 0; j < m; j++)
             f >> M[i][j];
-    //afisM(M);
+    afisM(M);
 
     //starting point: M[0][0]
     pathM[0][0] = M[0][0];
@@ -48,32 +48,15 @@ int main()
     cout << "Min cost: " << pathM[n-1][m-1] << endl;
 
     //--- find the path ---//
-    int path[100];
-    int ip = 0;
     int i = n-1, j = m-1;
-    while(j!=0)
-    {
-        if(i == 0)
-        {
-            cout << M[i][j] << " ";
-            path[ip++] = M[i][j];
-                j--;
-        }
-        while(i!=0)
-        {
-            cout << M[i][j] << " ";
-            path[ip++] = M[i][j];
-            if(pathM[i-1][j] < pathM[i][j-1])
-                i--;
-            else
-                j--;
-        }
+    while(i!=0 || j!=0) {
+        cout<<"*"<<i<<"-"<<j<<"*  ";
+        cout << M[i][j] << endl;
+        if(pathM[i-1][j] < pathM[i][j-1])
+            i--;
+        else
+            j--;
     }
-    path[ip] = M[i][j];
-
-    cout << "The path: ";
-    for(int i = ip; i >= 0; i--)
-        cout << path[i] << " ";
 
     return 0;
 }
