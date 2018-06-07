@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1528377977 source:e:\github\advancedprogrammingtechniques\laboratorytest\ex2-2018\main.cpp
+	<iostream>
+	<cmath>
+	<fstream>
+
