@@ -4,37 +4,39 @@
 #include<math.h>
 using namespace std;
 ifstream f("date.in");
-int n, x;
-void divide(int n, int dim, int x, int y) {
+int n, x, dim;
+void divide(int n, int x, int y, int index) {
 
-    if(dim = 1) {
-        cout << x+1 << " " << y+1 << endl;
+    if(dim == 1) {
+        cout << x + 1 << " " << y+1 << endl;
     }
     else {
         dim = dim/4;
-        cout<< "**" << n << "*" << dim << "**"<< endl;
-        if(n <= dim) {
+        int halfDim = 0;
+        if(dim > 2)
+            halfDim = dim/2;
+        else
+            halfDim = 1;
+
+        if(n <= index + dim) {
             //triunghiul din stanga sus
             cout<<"a"<<endl;
-            divide(n, dim, x, y);
+            divide(n, x, y, 0*dim);
         }
-
-        else if(n <= dim*2) {
+        else if(n <= index + dim*2) {
             cout<<"b"<<endl;
             //triunghiul din dreapta jos
-            divide(n, dim, x + dim/2, y + dim/2);
+            divide(n, x + halfDim, y + halfDim, 1*dim);
         }
-
-        else if(n <= dim*3) {
+        else if(n <= index + dim*3) {
             cout<<"c"<<endl;
             //triunghiul din dreapta sus
-            divide(n, dim, x, y + dim/2);
+            divide(n, x, y + halfDim, 2*dim);
         }
-
-        else if(n <= dim*4) {
+        else if(n <= index + dim*4) {
             cout<<"d"<<endl;
             //triunghiul din stanga jos
-            divide(n, dim, x + dim/2, y);
+            divide(n, x + halfDim, y, 3*dim);
         }
 
     }
@@ -42,6 +44,6 @@ void divide(int n, int dim, int x, int y) {
 int main()
 {
     f >> n >> x;
-    int dim = pow(2,n) * pow(2,n);
-    divide(x, dim, 0, 0);
+    dim = pow(2,n) * pow(2,n);
+    divide(x, 0, 0, 0);
 }
