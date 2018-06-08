@@ -1,49 +1,48 @@
-#include<iostream>
-#include<fstream>
-#include<stdlib.h>
-#include<math.h>
-using namespace std;
-ifstream f("date.in");
-int n, x, dim;
-void divide(int n, int x, int y, int index) {
+#include <iostream>
+#include <fstream>
+#include <math.h>
 
+using namespace std;
+
+ifstream f("date.in");
+
+int n, nr, dim;
+
+divide(int x, int y, int way)
+{
     if(dim == 1) {
-        cout << x + 1 << " " << y+1 << endl;
+        cout << x+1 << " " << y+1;
     }
     else {
         dim = dim/4;
-        int halfDim = 0;
+        int halfDim;
         if(dim > 2)
             halfDim = dim/2;
         else
             halfDim = 1;
 
-        if(n <= index + dim) {
-            //triunghiul din stanga sus
-            cout<<"a"<<endl;
-            divide(n, x, y, 0*dim);
+        if(nr <= dim + way) {
+            //triunghi stanga sus
+            divide(x,y,0);
         }
-        else if(n <= index + dim*2) {
-            cout<<"b"<<endl;
-            //triunghiul din dreapta jos
-            divide(n, x + halfDim, y + halfDim, 1*dim);
+        else if(nr <= 2*dim + way) {
+            //triunghi dreapta jos
+            divide(x + halfDim, y + halfDim, dim);
         }
-        else if(n <= index + dim*3) {
-            cout<<"c"<<endl;
-            //triunghiul din dreapta sus
-            divide(n, x, y + halfDim, 2*dim);
+        else if(nr <= 3*dim + way) {
+            //triunghi in dreapta sus
+            divide(x, y + halfDim, 2*dim);
         }
-        else if(n <= index + dim*4) {
-            cout<<"d"<<endl;
-            //triunghiul din stanga jos
-            divide(n, x + halfDim, y, 3*dim);
+        else if(nr <= 4*dim + way) {
+            divide(x + halfDim, y, 3*dim);
         }
-
     }
 }
-int main()
-{
-    f >> n >> x;
+
+int main () {
+
+    f >> n >> nr;
     dim = pow(2,n) * pow(2,n);
-    divide(x, 0, 0, 0);
+    divide(0, 0, 0);
+
 }
